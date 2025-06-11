@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EMVCoL3OnlineMessageFormat>
+  <LogDetails>
+    <Date-Time>2025-06-10T19:14:25Z</Date-Time>
+    <LoggingTool>
+      <ProductName>Inovant VTS Simulator</ProductName>
+      <ProductVersion>1.0.0</ProductVersion>
+    </LoggingTool>
+    <SchemaSelectionIndex>1.1</SchemaSelectionIndex>
+    <Reference>EMVCo L3 Online Message Format</Reference>
+    <L3OMLVersion>1.1</L3OMLVersion>
+  </LogDetails>
+  <ConnectionList>
+    <Connection ID="TestIssuer|Network">
+      <Protocol>
+        <FriendlyName>VISA VSDC</FriendlyName>
+        <SymbolicName>VISAVSDC</SymbolicName>
+        <VersionInfo>1.0.0</VersionInfo>
+      </Protocol>
+      <TCPIPParameters>
+        <Address>.</Address>
+        <Port>1234</Port>
+        <Client>false</Client>
+        <Format>ASCII</Format>
+      </TCPIPParameters>
+    </Connection>
+  </ConnectionList>
+  <OnlineMessageList>
+    <OnlineMessage Class="Response" Source="TestIssuer|Network" Destination="N/A">
+      <RawData>HEXDATAPLACEHOLDER</RawData>
+      <MessageInfo>
+        <PINValidated>N/A</PINValidated>
+        <ARQCValidated>N/A</ARQCValidated>
+        <MACValidated>N/A</MACValidated>
+        <CVC3Track1Validated>N/A</CVC3Track1Validated>
+        <CVC3Track2Validated>N/A</CVC3Track2Validated>
+        <ToolComment>Response Authorization</ToolComment>
+      </MessageInfo>
+      <Message Class="Response">
+        <MessageName>0110</MessageName>
+        <MTI>0110</MTI>
+        <FieldList>
+          <Field ID="NET.0110.DE.F42">
+            <FriendlyName>Card Acceptor Id Code</FriendlyName>
+            <FieldType>ANS15</FieldType>
+            <FieldBinary>38363337323431343439</FieldBinary>
+            <FieldViewable>8637241449</FieldViewable>
+          </Field>
+          <Field ID="NET.0110.DE.F63.1">
+            <FriendlyName>Network Identification Code</FriendlyName>
+            <FieldType>unknown</FieldType>
+            <FieldBinary>303030305E4361736520352E3120417574686F72697A6174696F6E202D20556E737065636966696564204163636F756E745E5653444320504F53204F72696720417574682030313130204F757420527370</FieldBinary>
+            <FieldViewable>0000^Case 5.1 Authorization - Unspecified Account^VSDC POS Orig Auth 0110 Out Rsp</FieldViewable>
+          </Field>
+        </FieldList>
+      </Message>
+    </OnlineMessage>
+    <OnlineMessage Class="Request" Source="N/A" Destination="TestIssuer|Network">
+      <RawData>HEXDATAPLACEHOLDER</RawData>
+      <MessageInfo>
+        <PINValidated>N/A</PINValidated>
+        <ARQCValidated>true</ARQCValidated>
+        <MACValidated>N/A</MACValidated>
+        <CVC3Track1Validated>N/A</CVC3Track1Validated>
+        <CVC3Track2Validated>N/A</CVC3Track2Validated>
+        <ToolComment>Request Authorization</ToolComment>
+      </MessageInfo>
+      <Message Class="Request">
+        <MessageName>0100</MessageName>
+        <MTI>0100</MTI>
+        <FieldList>
+          <Field ID="NET.0100.DE.F42">
+            <FriendlyName>Card Acceptor Id Code</FriendlyName>
+            <FieldType>ANS15</FieldType>
+            <FieldBinary>56616C696456616C7565</FieldBinary>
+            <FieldViewable>8637241449</FieldViewable>
+          </Field>
+          <Field ID="NET.0100.DE.F63.1">
+            <FriendlyName>Network Identification Code</FriendlyName>
+            <FieldType>unknown</FieldType>
+            <FieldBinary>56616C696456616C7565</FieldBinary>
+            <FieldViewable>0000^Case 5.1 Authorization - Unspecified Account^VSDC POS Orig Auth 0100 In Req</FieldViewable>
+          </Field>
+        </FieldList>
+      </Message>
+    </OnlineMessage>
+  </OnlineMessageList>
+</EMVCoL3OnlineMessageFormat>
